@@ -1,0 +1,134 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-dialog {
+  width: 42rem;
+  height: 28rem;
+  color: white;
+  border-radius: 30px;
+
+  .dialog-header {
+    margin: 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .btn-close {
+      background: url("../../assets/close.png");
+      height: 1rem;
+      width: 1rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .dialog-body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .icons {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+
+    .icon-label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      margin-left: 1.5rem;
+    }
+
+    .icon-selector {
+      display: flex;
+      flex-wrap: wrap;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+
+      .icon-card {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 1px 5px 10px -2px rgba(0, 0, 0, 0.4);
+        margin: 5px;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 1px 10px 28px -7px rgba(0, 0, 0, 1);
+          transition: box-shadow 0.1s ease-in-out;
+        }
+
+        img {
+          width: 60%;
+          filter: invert(1);
+        }
+      }
+
+      .selected-icon {
+        border: 0.1rem #ffffff solid;
+      }
+    }
+  }
+
+  .inputs {
+    margin: 0 2rem 1.5rem 0;
+    width: 75%;
+
+    .form-control,
+    .form-check-input {
+      box-shadow: 1px 5px 9px -5px rgba(0, 0, 0, 0.4);
+      border: none;
+      &:focus {
+        color: #212529;
+        outline: 0;
+        box-shadow: 1px 10px 17px -10px rgba(0, 0, 0, 0.75);
+        transition: box-shadow 0.1s ease-in-out;
+      }
+      &:checked {
+        background-color: #000000;
+      }
+    }
+    textarea {
+      resize: none !important;
+    }
+
+    .form-check-input {
+      box-shadow: 1px 5px 10px -3px rgba(0, 0, 0, 0.4) !important;
+    }
+  }
+
+  .dialog-footer {
+    margin: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+    .save-button {
+      opacity: 0.6;
+      border: none;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      font-weight: 500;
+      color: white;
+      font-size: 24px;
+
+      &:hover {
+        opacity: 1;
+        transition: opacity 0.25s ease-in-out;
+      }
+    }
+  }
+}
